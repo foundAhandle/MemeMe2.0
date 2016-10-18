@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					8CDB4F151DB6749E0011734F = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = DRDRS3VSS6;
 						ProvisioningStyle = Automatic;
 					};
 					8CDB4F291DB6749E0011734F = {
@@ -410,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DRDRS3VSS6;
 				INFOPLIST_FILE = MemeMe2.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.lldc.MemeMe2-0";
@@ -422,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DRDRS3VSS6;
 				INFOPLIST_FILE = MemeMe2.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.lldc.MemeMe2-0";
