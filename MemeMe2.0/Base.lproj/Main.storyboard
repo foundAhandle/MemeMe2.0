@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="-159" y="750"/>
         </scene>
-        <!--Item-->
+        <!--Collection View Nav Controller-->
         <scene sceneID="e77-kQ-Agz">
             <objects>
-                <navigationController id="KqX-bH-LZK" sceneMemberID="viewController">
+                <navigationController id="KqX-bH-LZK" userLabel="Collection View Nav Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="tWI-Lj-eo0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s1R-ag-TIz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -41,11 +41,11 @@
             </objects>
             <point key="canvasLocation" x="638" y="1155"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Meme Collection View VC-->
         <scene sceneID="fHB-Js-70a">
             <objects>
-                <collectionViewController id="e6Q-ji-k3Z" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="MeY-0s-Qgv">
+                <collectionViewController id="e6Q-ji-k3Z" userLabel="Meme Collection View VC" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="MeY-0s-Qgv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,11 +79,11 @@
             </objects>
             <point key="canvasLocation" x="1878" y="1540"/>
         </scene>
-        <!--View Controller-->
+        <!--Meme Detail VC-->
         <scene sceneID="v3K-p4-Qm7">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FnR-g8-E9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="MBA-5i-AQd" sceneMemberID="viewController">
+                <viewController id="MBA-5i-AQd" userLabel="Meme Detail VC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SvY-CE-uSy"/>
                         <viewControllerLayoutGuide type="bottom" id="Lle-bV-Dzo"/>
@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="1878" y="750"/>
         </scene>
-        <!--View Controller-->
+        <!--Meme Editor VC-->
         <scene sceneID="rAf-7G-auJ">
             <objects>
-                <viewController id="eEy-eb-pqO" sceneMemberID="viewController">
+                <viewController id="eEy-eb-pqO" userLabel="Meme Editor VC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hK3-gc-hGY"/>
                         <viewControllerLayoutGuide type="bottom" id="5eq-sU-aEH"/>
@@ -115,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="3095" y="610"/>
         </scene>
-        <!--Item-->
+        <!--Table View Nav Controller-->
         <scene sceneID="jdj-yK-wkm">
             <objects>
-                <navigationController id="9EI-mf-Whv" sceneMemberID="viewController">
+                <navigationController id="9EI-mf-Whv" userLabel="Table View Nav Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="6Kq-Tb-EQO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="loD-6O-UxW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="638" y="389"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Meme Table View VC-->
         <scene sceneID="tL7-ew-5Yi">
             <objects>
-                <tableViewController id="Chw-kX-sV0" sceneMemberID="viewController">
+                <tableViewController id="Chw-kX-sV0" userLabel="Meme Table View VC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="geC-az-sEp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,6 +166,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="exm-Aq-YPz"/>
+        <segue reference="hee-dU-lcT"/>
     </inferredMetricsTieBreakers>
 </document>
