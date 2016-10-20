@@ -186,7 +186,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     @IBAction func didPressCancel(_ sender: UIBarButtonItem) {
 	  clrAndHideTxt()
 	  self.memeImageView.isHidden = true
-	  dismiss(animated: true, completion: nil)
+	  self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func didPressPhoto(_ sender: UIBarButtonItem) {
@@ -218,6 +218,6 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
 		showTxt()
 	  }
 
-	  dismiss(animated: true, completion: nil)
+	  self.dismiss(animated: true, completion: nil)
     }
 }

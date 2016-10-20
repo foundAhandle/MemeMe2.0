@@ -5,7 +5,7 @@ import UIKit
 
 class MemeCollectionViewController: UICollectionViewController {
 
-//	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 	
     // MARK: Properties
     
@@ -14,38 +14,34 @@ class MemeCollectionViewController: UICollectionViewController {
     }
 	
     // MARK: Table View Data Source
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-print("viewDidLoad: \(self.memes.count)")
-/*
-		let space: CGFloat = 3.0
-		let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
 
+//		let space: CGFloat = 2.0
+		let dimension = (self.view.frame.size.width/* - (2 * space)*/) / 3.0
 
-		flowLayout.minimumInteritemSpacing = space
-		flowLayout.minimumLineSpacing = space
-		flowLayout.itemSize = CGSizeMake(dimension, dimension)
-*/    }
+		flowLayout.minimumInteritemSpacing = 0
+		flowLayout.minimumLineSpacing = 0
+		flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+		collectionView!.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-print("numberOfItemsInSection: \(self.memes.count)")
         return self.memes.count
     }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath as IndexPath) as! MemeCollectionViewCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
 
         let meme = self.memes[indexPath.row]
-print("cellForItemAtIndexPath: \(meme)")
+//		cell.memeImageView.contentMode = UIViewContentMode.scaleAspectFit
         cell.memeImageView?.image = meme.composite
-//    cell.setText(meme.top, bottomString: meme.bottom)        
 
         return cell
     }
