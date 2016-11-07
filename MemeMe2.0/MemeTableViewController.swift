@@ -28,17 +28,17 @@ class MemeTableViewController: UITableViewController {
 
         let meme = self.memes[indexPath.row]
 
-		cell.imageView?.contentMode = UIViewContentMode.scaleToFill
+//		cell.imageView?.contentMode = UIViewContentMode.scaleToFill
 
         cell.imageView?.image = meme.composite
+
+		cell.textLabel?.text = meme.topTxt + " " +
+		  meme.btmTxt
 
         return cell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {        
-print("")
-print("didSelectRowAtIndexPath")
-print("")
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
 
         detailController.meme = self.memes[indexPath.row]
