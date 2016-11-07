@@ -47,10 +47,11 @@ class MemeCollectionViewController: UICollectionViewController {
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath) {
-/*
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("VillainDetailViewController") as! VillainDetailViewController
-        detailController.villain = self.allVillains[indexPath.row]
+print("TEST")
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        detailController.meme = self.memes[indexPath.row]
+print("HERE")
         self.navigationController!.pushViewController(detailController, animated: true)
-*/        
+		
     }
 }
