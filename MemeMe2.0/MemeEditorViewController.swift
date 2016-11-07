@@ -23,18 +23,25 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     @IBOutlet weak var bottomToolbar: UIToolbar!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+	override var prefersStatusBarHidden: Bool {
+	  return true
+	}
+
     override func viewDidLoad() {
 	  super.viewDidLoad()
+
 	  actionButton.isEnabled = false
 	  initTxtField(topText)
 	  initTxtField(bottomText)
 	  clrAndHideTxt()
-	  cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
     }
-    
+
     /// Runs when the view appears
     override func viewWillAppear(_ animated: Bool) {
 	  super.viewWillAppear(animated)
+
+	  cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
+
 	  subscribeToKeyboardNotifications()
     }
     
@@ -75,7 +82,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     func keyboardWillShow(_ notification: Notification) {
 	  if bottomText.isFirstResponder {
-		view.frame.origin.y -= getKeyboardHeight(notification)
+		view.frame.origin.y = getKeyboardHeight(notification) * (-1)
 	  }
     }
     
