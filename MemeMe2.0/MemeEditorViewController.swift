@@ -71,8 +71,8 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     // KEYBOARD
 
     func subscribeToKeyboardNotifications() {
-	  NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-	  NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+	  NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+	  NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     func unsubscribeFromKeyboardNotifications() {
@@ -110,11 +110,11 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     }
 
     fileprivate func save(_ comp: UIImage) {
-	  let backgroundImage = self.memeImageView.image == nil ?
-		UIImage() : self.memeImageView.image
+	  let backgroundImage = memeImageView.image == nil ?
+		UIImage() : memeImageView.image
 	  let meme = Meme(
-		topTxt:		self.topText.text!,
-		btmTxt:		self.bottomText.text!,
+		topTxt:		topText.text!,
+		btmTxt:		bottomText.text!,
 		img:		backgroundImage!,
 		composite:	comp
 	  )
@@ -164,15 +164,15 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     }
    
     fileprivate func showTxt() {
-	  self.topText.isHidden = false
-	  self.bottomText.isHidden = false
+	  topText.isHidden = false
+	  bottomText.isHidden = false
     }
 
     fileprivate func clrAndHideTxt() {
-	  self.topText.text = ""
-	  self.bottomText.text = ""
-	  self.topText.isHidden = true
-	  self.bottomText.isHidden = true
+	  topText.text = ""
+	  bottomText.text = ""
+	  topText.isHidden = true
+	  bottomText.isHidden = true
     }
 
 	// ACTIONS
@@ -192,8 +192,8 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
 
     @IBAction func didPressCancel(_ sender: UIBarButtonItem) {
 	  clrAndHideTxt()
-	  self.memeImageView.isHidden = true
-	  self.dismiss(animated: true, completion: nil)
+	  memeImageView.isHidden = true
+	  dismiss(animated: true, completion: nil)
     }
     
     @IBAction func didPressPhoto(_ sender: UIBarButtonItem) {
@@ -217,7 +217,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
 	// IMAGE PICKER
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-	 self.memeImageView.isHidden = false
+	 memeImageView.isHidden = false
 
 	  if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
 		memeImageView.image = image
@@ -225,6 +225,6 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
 		showTxt()
 	  }
 
-	  self.dismiss(animated: true, completion: nil)
+	  dismiss(animated: true, completion: nil)
     }
 }

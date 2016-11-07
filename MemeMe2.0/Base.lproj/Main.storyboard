@@ -105,16 +105,21 @@
                         <viewControllerLayoutGuide type="top" id="SvY-CE-uSy"/>
                         <viewControllerLayoutGuide type="bottom" id="Lle-bV-Dzo"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DzL-0r-ayF">
+                    <view key="view" contentMode="scaleAspectFit" id="DzL-0r-ayF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKt-Rs-34F">
-                                <rect key="frame" x="0.0" y="260" width="375" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKt-Rs-34F">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gKt-Rs-34F" firstAttribute="leading" secondItem="DzL-0r-ayF" secondAttribute="leading" id="48m-Br-Rpf"/>
+                            <constraint firstItem="gKt-Rs-34F" firstAttribute="top" secondItem="DzL-0r-ayF" secondAttribute="top" id="EW6-Ik-pHg"/>
+                            <constraint firstItem="gKt-Rs-34F" firstAttribute="bottom" secondItem="Lle-bV-Dzo" secondAttribute="top" id="GjM-eW-Ooi"/>
+                            <constraint firstAttribute="trailing" secondItem="gKt-Rs-34F" secondAttribute="trailing" id="faX-Am-nzB"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="gKt-Rs-34F" id="nNh-sc-vJ0"/>

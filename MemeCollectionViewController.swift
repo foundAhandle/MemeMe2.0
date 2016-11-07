@@ -19,7 +19,7 @@ class MemeCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
 //		let space: CGFloat = 2.0
-		let dimension = (self.view.frame.size.width/* - (2 * space)*/) / 3.0
+		let dimension = (view.frame.size.width/* - (2 * space)*/) / 3.0
 
 		flowLayout.minimumInteritemSpacing = 0
 		flowLayout.minimumLineSpacing = 0
@@ -28,18 +28,18 @@ class MemeCollectionViewController: UICollectionViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
+        tabBarController?.tabBar.isHidden = false
 		collectionView!.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.memes.count
+        return memes.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
 
-        let meme = self.memes[indexPath.row]
+        let meme = memes[indexPath.row]
 //		cell.memeImageView.contentMode = UIViewContentMode.scaleAspectFit
         cell.memeImageView?.image = meme.composite
 
@@ -47,9 +47,9 @@ class MemeCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        let detailController = storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
 
-        detailController.meme = self.memes[indexPath.row]
-        self.navigationController!.pushViewController(detailController, animated: true)
+        detailController.meme = memes[indexPath.row]
+        navigationController!.pushViewController(detailController, animated: true)
     }
 }
