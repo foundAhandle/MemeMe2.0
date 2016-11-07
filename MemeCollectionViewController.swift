@@ -24,6 +24,9 @@ class MemeCollectionViewController: UICollectionViewController {
 		flowLayout.minimumInteritemSpacing = 0
 		flowLayout.minimumLineSpacing = 0
 		flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+
+//collectionView?.allowsSelection = true
+//collectionView?.isUserInteractionEnabled = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,13 +48,14 @@ class MemeCollectionViewController: UICollectionViewController {
 
         return cell
     }
-    
+
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath) {
-print("TEST")
+print("")
+print("didSelectItemAtIndexPath")
+print("")
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
         detailController.meme = self.memes[indexPath.row]
-print("HERE")
         self.navigationController!.pushViewController(detailController, animated: true)
-		
+        
     }
 }

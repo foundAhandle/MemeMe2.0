@@ -49,8 +49,8 @@
         <!--Meme Collection VC-->
         <scene sceneID="fHB-Js-70a">
             <objects>
-                <collectionViewController id="e6Q-ji-k3Z" userLabel="Meme Collection VC" customClass="MemeCollectionViewController" customModule="MemeMe2_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="MeY-0s-Qgv">
+                <collectionViewController id="e6Q-ji-k3Z" userLabel="Meme Collection VC" customClass="MemeCollectionViewController" customModule="MemeMe2_0" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="MeY-0s-Qgv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -145,13 +145,13 @@
         <!--Meme Table VC-->
         <scene sceneID="tL7-ew-5Yi">
             <objects>
-                <tableViewController id="Chw-kX-sV0" userLabel="Meme Table VC" sceneMemberID="viewController">
+                <tableViewController id="Chw-kX-sV0" userLabel="Meme Table VC" customClass="MemeTableViewController" customModule="MemeMe2_0" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="geC-az-sEp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AdZ-Zi-4rg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableViewCell" id="AdZ-Zi-4rg">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AdZ-Zi-4rg" id="GdT-5N-4xw">
@@ -165,7 +165,13 @@
                             <outlet property="delegate" destination="Chw-kX-sV0" id="gAS-7V-3pA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="uWf-E3-Ih9"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="K8Q-re-Wbm">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="bj6-4S-cwX" userLabel="New Meme">
+                            <connections>
+                                <segue destination="Os3-q0-KAZ" kind="presentation" id="CDF-g4-zNh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADi-Iw-5Zx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -268,11 +274,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVM-FA-Esf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3158" y="750"/>
+            <point key="canvasLocation" x="2967" y="609"/>
         </scene>
     </scenes>
     <resources>
         <image name="Collection" width="30" height="30"/>
         <image name="Table" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="CDF-g4-zNh"/>
+    </inferredMetricsTieBreakers>
 </document>
