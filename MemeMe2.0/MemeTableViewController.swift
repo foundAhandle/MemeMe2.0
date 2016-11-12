@@ -28,8 +28,6 @@ class MemeTableViewController: UITableViewController {
 
         let meme = memes[indexPath.row]
 
-//		cell.imageView?.contentMode = UIViewContentMode.scaleToFill
-
         cell.imageView?.image = meme.composite
 
 		cell.textLabel?.text = meme.topTxt + " " +
