@@ -36,7 +36,6 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
 	  clrAndHideTxt()
     }
 
-    /// Runs when the view appears
     override func viewWillAppear(_ animated: Bool) {
 	  super.viewWillAppear(animated)
 
@@ -45,7 +44,6 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
 	  subscribeToKeyboardNotifications()
     }
     
-    /// Runs when the view disappears
     override func viewWillDisappear(_ animated: Bool) {
 	  super.viewWillDisappear(animated)
 	  unsubscribeFromKeyboardNotifications()
@@ -140,7 +138,6 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
 	fileprivate func initTxtField (_ textField: UITextField){
 	  textField.defaultTextAttributes = memeTextAttributes
 	  textField.textAlignment = NSTextAlignment.center
-	  textField.delegate = self
 	}
 
     fileprivate func clearPlaceholderText(_ textField: UITextField) {
